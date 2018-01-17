@@ -8,7 +8,7 @@ Technologies being used:
 3. semantic-ui-react (to beautify better than react-bootstrap)
 4. validator (to validate login)
 
-
+This project is still under development.
 
 
 
