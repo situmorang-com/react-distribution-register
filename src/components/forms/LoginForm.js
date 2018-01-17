@@ -1,6 +1,7 @@
 import React from 'react';
 import { Form, Button } from 'semantic-ui-react';
 import Validator from 'validator';
+import InlineError from "../messages/InlineError";
 
 class LoginForm extends React.Component {
     state = {
@@ -30,7 +31,7 @@ class LoginForm extends React.Component {
     }
 
     render () {
-        const { data } = this.state;
+        const { data, errors } = this.state;
         return (
             <Form onSubmit={this.onSubmit}>
                 <Form.Field>
@@ -43,6 +44,7 @@ class LoginForm extends React.Component {
                         value={data.email}
                         onChange={this.onChange}
                     />
+                    {errors.email && <InlineError text={errors.email} />}
                 </Form.Field>
                 
                 <Form.Field>
@@ -55,6 +57,8 @@ class LoginForm extends React.Component {
                         value={data.password}
                         onChange={this.onChange}
                     />
+                    {errors.password && <InlineError text={errors.password} />}
+                    
                 </Form.Field>
                 <Button primary>Login</Button>
             </Form>
